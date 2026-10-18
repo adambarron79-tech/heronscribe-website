@@ -6,11 +6,10 @@ Cloudflare Pages product for new projects.
 
 ## Structure
 - `public/` — everything served to visitors: `index.html`, `styles.css`,
-  `script.js`, `robots.txt`, `sitemap.xml`, `assets/` (logo, favicons,
+  `robots.txt`, `sitemap.xml`, `assets/` (logo, favicons,
   OG image, hero photo)
-- `src/worker.js` — the Worker entry point. Handles `POST /contact`
-  (relays to Resend, with honeypot spam protection) and serves everything
-  else straight from `public/` via the ASSETS binding
+- `src/worker.js` — minimal Worker entry; serves everything from `public/`
+  via the ASSETS binding. No form handling or user input.
 - `wrangler.jsonc` — Worker configuration (name, static assets directory)
 
 ## Deploy — connected via GitHub (already set up)
@@ -19,14 +18,10 @@ This repo is connected to a Cloudflare Workers project via GitHub, so
 day-to-day.
 
 ### One-time setup still required
-1. **Add the Resend API key as a secret** — in the Cloudflare dashboard,
-   open this Worker project → Settings → Variables and Secrets → add
-   `RESEND_API_KEY` as a **secret** (not a plain variable). Do this once;
-   it persists across deploys.
-2. **Connect the custom domain** — in the same Worker project → Settings →
+1. **Connect the custom domain** — in the same Worker project → Settings →
    Domains & Routes → add `heronscribe.app`. Since the domain is already
    on this Cloudflare account, this should auto-configure.
-3. **Point `app.heronscribe.app` at the existing gated platform (Render)**
+2. **Point `app.heronscribe.app` at the existing gated platform (Render)**
    — a separate DNS record in the same Cloudflare zone, independent of
    this Worker.
 

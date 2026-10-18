@@ -93,7 +93,8 @@ a { color: var(--blue); }
 .landing-fold {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 65px);
+  min-height: calc(100vh - 57px);
+  min-height: calc(100dvh - 57px);
   background: #FFFFFF;
 }
 .hero-bg {
@@ -230,35 +231,6 @@ a { color: var(--blue); }
 .final-cta h2 { color: var(--white); font-size: clamp(1.4rem, 3vw, 1.9rem); }
 .final-cta .pricing { color: #B9CDEA; max-width: 480px; margin: 0 auto 2em; font-size: 0.95rem; }
 .final-cta .btn-primary { background: var(--blue); }
-
-/* Contact */
-.contact { padding: clamp(36px, 7vh, 72px) 0; }
-.contact-inner { max-width: 480px; margin: 0 auto; text-align: center; }
-.contact-form { text-align: left; margin-top: 24px; }
-.contact-form label {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin: 16px 0 6px;
-}
-.contact-form label:first-child { margin-top: 0; }
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  background: var(--paper);
-  color: var(--navy-ink);
-}
-.contact-form input:focus,
-.contact-form textarea:focus { border-color: var(--blue); }
-.contact-form button { margin-top: 20px; width: 100%; }
-.contact-status { min-height: 1.4em; font-size: 0.9rem; margin: 12px 0 0; }
-.contact-status.ok { color: #1a7f4b; }
-.contact-status.error { color: #b3261e; }
 
 /* Footer */
 .site-footer { border-top: 1px solid var(--line); padding: 28px 0; }
