@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HeronScribe — AI clinical scribe for optometrists</title>
 <meta name="description" content="HeronScribe is the AI clinical scribe built by optometrists, for optometrists. Dictate a consult, get a structured note or referral letter in your own voice.">
+<!-- DEV: remove this noindex line when heronscribe.app goes live -->
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://heronscribe.app/">
 
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -60,6 +62,63 @@
         "priceCurrency": "AUD",
         "billingDuration": "P1Y",
         "unitText": "per optometrist FTE"
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does the free trial work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Create an account and start using HeronScribe on your own consults. There is a free trial before any billing begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$99 per month, or $1,000 per year, per FTE optometrist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I stay in control of what goes in the record?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. HeronScribe drafts. You review and edit every note and letter before it is exported."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will it sound like me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HeronScribe learns your writing style, so notes and letters read like you wrote them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who built HeronScribe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adam and Hugh, both practising optometrists, who built it to solve the paperwork load they were living with."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is patient data handled securely?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data is handled under a formal Anthropic data processing agreement, with legal documentation prepared alongside a solicitor."
       }
     }
   ]
@@ -190,6 +249,38 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <!-- Wording to be approved by solicitor before launch. Keep in sync with the FAQPage JSON-LD in <head>. -->
+  <section class="faq">
+    <div class="wrap faq-inner">
+      <h2>Common questions</h2>
+      <details class="faq-item">
+        <summary>How does the free trial work?</summary>
+        <p>Create an account and start using HeronScribe on your own consults. There is a free trial before any billing begins.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What does it cost?</summary>
+        <p>$99 per month, or $1,000 per year, per FTE optometrist.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I stay in control of what goes in the record?</summary>
+        <p>Yes. HeronScribe drafts. You review and edit every note and letter before it is exported.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will it sound like me?</summary>
+        <p>HeronScribe learns your writing style, so notes and letters read like you wrote them.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Who built HeronScribe?</summary>
+        <p>Adam and Hugh, both practising optometrists, who built it to solve the paperwork load they were living with.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is patient data handled securely?</summary>
+        <p>Data is handled under a formal Anthropic data processing agreement, with legal documentation prepared alongside a solicitor.</p>
+      </details>
+    </div>
+  </section>
+
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="wrap final-cta-inner">
@@ -205,6 +296,7 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <span>© 2026 HeronScribe Pty Ltd</span>
+    <!-- LEGAL LINKS: add here once solicitor documents are approved (see launch/legal-footer.html) -->
     <a href="mailto:hello@heronscribe.app">Questions? hello@heronscribe.app</a>
   </div>
 </footer>

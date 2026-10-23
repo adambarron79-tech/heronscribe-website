@@ -1,4 +1,8 @@
+# DEV: replace with the version below when heronscribe.app goes live
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://heronscribe.app/sitemap.xml
+# LIVE VERSION:
+# User-agent: *
+# Allow: /
+# Sitemap: https://heronscribe.app/sitemap.xml

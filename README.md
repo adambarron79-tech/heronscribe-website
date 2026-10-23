@@ -60,3 +60,18 @@ Marked with `<!-- PLACEHOLDER -->` comments in `public/index.html`:
 
 No footer legal links (privacy/terms) yet — add once HeronScribe Pty Ltd's
 compliance documentation is finalized.
+
+## Dev mode (current)
+Site is served at the workers.dev URL only and is hidden from search engines
+(`noindex` meta tag in `index.html` + `Disallow: /` in `robots.txt`).
+**At launch:** delete the noindex line, restore the live robots.txt, then attach
+`heronscribe.app` under Domains & Routes.
+
+## Go-live (after solicitor approval)
+`launch/` is not served (only `public/` is). Contents:
+- `go-live.ps1` removes the noindex tag, installs the live `robots.txt`, commits and pushes.
+  Run from the repo folder: `powershell -ExecutionPolicy Bypass -File .\launch\go-live.ps1`
+- `robots.live.txt` live robots file (used by the script)
+- `legal-footer.html` footer Privacy/Terms links, add once `privacy.html` and `terms.html` exist
+- `video-embed.html` replaces the video placeholder once Hugh's video is uploaded
+Full order of steps: see the Go-Live Checklist document.
