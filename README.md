@@ -58,8 +58,13 @@ Marked with `<!-- PLACEHOLDER -->` comments in `public/index.html`:
 - **Demo video** — currently an icon placeholder; swap in a real embed
   once a demo recording exists.
 
-No footer legal links (privacy/terms) yet — add once HeronScribe Pty Ltd's
-compliance documentation is finalized.
+Footer legal links point at the live app pages:
+`https://app.heronscribe.app/legal/privacy-policy-2026-10-29.html` and
+`https://app.heronscribe.app/legal/terms-of-service-2026-11-02.html`.
+Never link `terms-of-use.html` (older, not current). When the app publishes
+a new version, update both links here and in `public/index.html`. No
+analytics or cookies until the solicitor confirms the Privacy Policy covers
+website visitors.
 
 ## Dev mode (current)
 Site is served at the workers.dev URL only and is hidden from search engines
@@ -72,6 +77,5 @@ Site is served at the workers.dev URL only and is hidden from search engines
 - `go-live.ps1` removes the noindex tag, installs the live `robots.txt`, commits and pushes.
   Run from the repo folder: `powershell -ExecutionPolicy Bypass -File .\launch\go-live.ps1`
 - `robots.live.txt` live robots file (used by the script)
-- `legal-footer.html` footer Privacy/Terms links, add once `privacy.html` and `terms.html` exist
 - `video-embed.html` replaces the video placeholder once Hugh's video is uploaded
 Full order of steps: see the Go-Live Checklist document.
