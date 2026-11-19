@@ -137,8 +137,11 @@
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <img src="assets/logo.png" alt="HeronScribe" class="brand-mark">
+    <a href="#top" class="brand" aria-label="HeronScribe, back to top">
+      <picture>
+        <source media="(max-width: 520px)" srcset="assets/logo-mark.png">
+        <img src="assets/logo.png" alt="HeronScribe" class="brand-mark" width="400" height="82">
+      </picture>
     </a>
     <div class="header-actions">
       <a href="https://app.heronscribe.app" class="login-link-header">Log in</a>
@@ -233,18 +236,18 @@
   <section class="video-section">
     <div class="wrap">
       <div class="video-placeholder" style="border:0;overflow:hidden">
-        <iframe src="https://www.youtube-nocookie.com/embed/KmkoDN5KYEw?rel=0" title="HeronScribe demo: start dictating notes in 5 minutes"
-          style="width:100%;height:100%;border:0" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        <video src="assets/heronscribe-hero.mp4" poster="assets/heronscribe-hero-poster.jpg" controls playsinline preload="none"
+          width="1920" height="1080" style="width:100%;height:100%;display:block;background:#fff"
+          aria-label="HeronScribe in 50 seconds: from consult to finished notes, letters and referrals"></video>
       </div>
-      <p class="video-caption">See a real consult, start to finished note</p>
+      <p class="video-caption">See how HeronScribe works, in 50 seconds</p>
     </div>
   </section>
 
   <!-- PROOF -->
-  <!-- PLACEHOLDER: swap generic line for named trial practices once cleared to publish -->
   <section class="proof">
     <div class="wrap">
-      <p>Already trialling with optometry practices across Australia and New Zealand.</p>
+      <p>Now live, and in use at optometry practices in Australia.</p>
     </div>
   </section>
 
