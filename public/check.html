@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Paperwork Check: how much time does your paperwork take?</title>
+<meta name="description" content="Three quick taps, about 30 seconds. See your own numbers straight away. No names, no sign-up.">
+<link rel="canonical" href="https://heronscribe.app/check">
+
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0A3570">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://heronscribe.app/check">
+<meta property="og:title" content="Paperwork Check: how much time does your paperwork take?">
+<meta property="og:description" content="Three quick taps, about 30 seconds. See your own numbers straight away. No names, no sign-up.">
+<meta property="og:image" content="https://heronscribe.app/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_AU">
+<meta property="og:site_name" content="HeronScribe">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paperwork Check: how much time does your paperwork take?">
+<meta name="twitter:description" content="Three quick taps, about 30 seconds. See your own numbers straight away. No names, no sign-up.">
+<meta name="twitter:image" content="https://heronscribe.app/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap">
+<style>
+:root{--navy:#0A3570;--sky:#0B84C6;--bg:#F4F7FB;--card:#fff;--ink:#0E2145;--muted:#566884;--line:#DAE3F0;--soft:#EAF1FA}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif;
+  padding:calc(20px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(32px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  min-height:100vh}
+.wrap{max-width:520px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.brand img{height:32px;width:auto;display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 20px}
+h1,h2{font-family:Poppins,sans-serif;margin:0;line-height:1.2;text-wrap:balance}
+h1{font-size:26px;color:var(--navy)}
+h2{font-size:21px;color:var(--navy);margin-bottom:6px}
+.lede{color:var(--muted);margin:10px 0 22px}
+.btn{display:block;width:100%;border:0;border-radius:12px;padding:15px 18px;background:var(--navy);color:#fff;font:600 16px Inter,sans-serif;cursor:pointer;text-align:center;text-decoration:none}
+.btn.sky{background:var(--sky)}
+.btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--line);margin-top:10px}
+.btn:focus-visible,.opt:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.dots{display:flex;gap:6px;margin-bottom:18px}
+.dots i{flex:1;height:5px;border-radius:3px;background:var(--line)}
+.dots i.on{background:var(--sky)}
+.hint{color:var(--muted);font-size:14px;margin:0 0 16px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 10px;font:600 17px Inter,sans-serif;color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums}
+.opt small{display:block;font:400 12.5px Inter,sans-serif;color:var(--muted);margin-top:2px}
+.opt:hover{background:var(--soft)}
+.opt.sel{background:var(--sky);border-color:var(--sky);color:#fff}
+.opt.sel small{color:#E6F3FB}
+.back{background:none;border:0;color:var(--muted);font:500 14px Inter,sans-serif;padding:14px 0 0;cursor:pointer}
+.big{font:700 52px/1 Poppins,sans-serif;color:var(--sky);margin:6px 0 2px}
+.unit{color:var(--muted);margin:0 0 18px}
+.facts{list-style:none;padding:0;margin:0 0 22px;border-top:1px solid var(--line)}
+.facts li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.facts b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.sb{background:var(--navy);color:#fff;border-radius:14px;padding:18px;margin-bottom:14px}
+.sb p{margin:0}
+.sb .line{font:600 18px/1.3 Poppins,sans-serif;margin-bottom:8px}
+.sb .steps{color:#BFD9F2;font-size:14px}
+.foot{color:var(--muted);font-size:12.5px;text-align:center;margin-top:16px}
+.foot.legal{margin-top:8px}
+.foot a{color:var(--muted)}
+.copied{color:var(--sky);font-size:14px;text-align:center;min-height:20px;margin-top:6px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="brand" href="/" aria-label="HeronScribe home">
+    <img src="assets/logo.png" alt="HeronScribe" width="400" height="82">
+  </a>
+
+  <!-- Start -->
+  <section class="card" id="s0">
+    <h1>How much paperwork follows you home?</h1>
+    <p class="lede">Three quick taps, about 30 seconds. See your own numbers straight away. No names, no sign-up.</p>
+    <button class="btn" id="go" type="button">Start</button>
+  </section>
+
+  <!-- Questions -->
+  <section class="card" id="sq" hidden>
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h2 id="qt"></h2>
+    <p class="hint" id="qh"></p>
+    <div class="opts" id="opts" role="radiogroup"></div>
+    <button class="back" id="back" type="button">← Back</button>
+  </section>
+
+  <!-- Result -->
+  <section class="card" id="sr" hidden>
+    <p class="hint" style="margin:0">Your paperwork, roughly</p>
+    <div class="big" id="wk">0</div>
+    <p class="unit">hours a clinic day on notes and letters</p>
+    <ul class="facts">
+      <li><span>In a 5-day week</span><b id="wkh">0 h</b></li>
+      <li><span>In your own time</span><b id="own">0 h a week</b></li>
+      <li><span>Over a working year</span><b id="yr">0 h</b></li>
+    </ul>
+    <div class="sb">
+      <p class="line">You take care of your patients. We'll take care of your paperwork.</p>
+      <p class="steps">Trial it. Talk to it. Trust it.</p>
+    </div>
+    <a class="btn sky" href="https://app.heronscribe.app">Try it free for 30 days</a>
+    <button class="btn ghost" id="share" type="button">Send this check to a colleague</button>
+    <div class="copied" id="copied" role="status" aria-live="polite"></div>
+    <button class="back" id="redo" type="button">↺ Start again</button>
+  </section>
+
+  <p class="foot">Based on your own estimates. Weeks are counted as 5 clinic days and a working year as 46 weeks.<br>heronscribe.app · By optometrists, for optometrists.</p>
+  <!-- LEGAL LINKS: same versioned app pages as index.html. When the documents are re-issued, update both pages. -->
+  <p class="foot legal"><a href="https://app.heronscribe.app/legal/privacy-policy-2026-10-29.html" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://app.heronscribe.app/legal/terms-of-service-2026-11-02.html" target="_blank" rel="noopener">Terms of Service</a></p>
+</div>
+
+<script>
+(function(){
+  var Q=[
+    {t:"Minutes on notes and letters for each consult?",h:"Include referrals and recalls. Your best guess is fine.",
+     o:[[3,"2–3 min"],[5,"5 min"],[8,"8 min"],[10,"10 min"],[15,"15 min"],[20,"20+ min"]]},
+    {t:"Hours a week doing paperwork in your own time?",h:"Evenings, weekends, lunch breaks, before opening.",
+     o:[[0,"None"],[1,"About 1 h"],[2,"About 2 h"],[3.5,"3–4 h"],[5,"5 h"],[7,"6+ h"]]},
+    {t:"Consults you see on a typical clinic day?",h:"Roughly is fine.",
+     o:[[6,"Under 8"],[8,"About 8"],[12,"About 12"],[16,"About 16"],[20,"About 20"],[24,"24+"]]}
+  ];
+  var a=[null,null,null], i=0;
+  var $=function(id){return document.getElementById(id)};
+  function show(id){["s0","sq","sr"].forEach(function(s){$(s).hidden=s!==id});window.scrollTo(0,0)}
+  function draw(){
+    var q=Q[i];
+    $("qt").textContent=q.t; $("qh").textContent=q.h;
+    $("opts").setAttribute("aria-label",q.t);
+    document.querySelectorAll(".dots i").forEach(function(d,k){d.classList.toggle("on",k<=i)});
+    $("opts").innerHTML=q.o.map(function(o,k){
+      return '<button type="button" role="radio" class="opt'+(a[i]===k?' sel':'')+'" aria-checked="'+(a[i]===k)+'" data-k="'+k+'">'+o[1]+(o[2]?'<small>'+o[2]+'</small>':'')+'</button>';
+    }).join("");
+  }
+  function fmt(n){return n>=10?Math.round(n).toString():(Math.round(n*2)/2).toString()}
+  function result(){
+    var mins=Q[0].o[a[0]][0], own=Q[1].o[a[1]][0], cons=Q[2].o[a[2]][0];
+    var day=mins*cons/60, wk=day*5;
+    $("wk").textContent=fmt(day);
+    $("wkh").textContent=fmt(wk)+" h";
+    $("own").textContent=(own===0?"None":fmt(own)+" h a week");
+    $("yr").textContent=Math.round(wk*46).toLocaleString("en-AU")+" h";
+    show("sr");
+  }
+  $("go").onclick=function(){i=0;draw();show("sq")};
+  $("opts").onclick=function(e){
+    var b=e.target.closest(".opt"); if(!b)return;
+    a[i]=Number(b.dataset.k); draw();
+    setTimeout(function(){ if(i<2){i++;draw()} else result(); },180);
+  };
+  $("back").onclick=function(){ if(i>0){i--;draw()} else show("s0") };
+  $("redo").onclick=function(){a=[null,null,null];i=0;show("s0");$("copied").textContent=""};
+  $("share").onclick=function(){
+    var url="https://heronscribe.app/check";
+    var msg="How much paperwork follows you home? This 30-second check shows you: "+url;
+    function copy(){
+      try{navigator.clipboard.writeText(msg).then(function(){$("copied").textContent="Link copied. Paste it into a message."},function(){$("copied").textContent=msg})}
+      catch(err){$("copied").textContent=msg}
+    }
+    // Phones: native share sheet. Elsewhere, or if sharing fails: copy to clipboard as before.
+    if(navigator.share && window.matchMedia && window.matchMedia("(pointer: coarse)").matches){
+      navigator.share({text:"How much paperwork follows you home? This 30-second check shows you:",url:url})
+        .catch(function(err){ if(!err||err.name!=="AbortError") copy(); });
+    } else copy();
+  };
+})();
+</script>
+</body>
+</html>
