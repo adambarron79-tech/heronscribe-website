@@ -70,6 +70,7 @@ h2{font-size:21px;color:var(--navy);margin-bottom:6px}
 .sb p{margin:0}
 .sb .line{font:600 18px/1.3 Poppins,sans-serif;margin-bottom:8px}
 .sb .steps{color:#BFD9F2;font-size:14px}
+.note{color:var(--muted);font-size:13px;text-align:center;margin:12px 0 0}
 .foot{color:var(--muted);font-size:12.5px;text-align:center;margin-top:16px}
 .foot.legal{margin-top:8px}
 .foot a{color:var(--muted)}
@@ -88,6 +89,7 @@ h2{font-size:21px;color:var(--navy);margin-bottom:6px}
     <h1>How much paperwork follows you home?</h1>
     <p class="lede">Three quick taps, about 30 seconds. See your own numbers straight away. No names, no sign-up.</p>
     <button class="btn" id="go" type="button">Start</button>
+    <p class="note">Your answers are saved anonymously, with no names.</p>
   </section>
 
   <!-- Questions -->
@@ -134,7 +136,15 @@ h2{font-size:21px;color:var(--navy);margin-bottom:6px}
     {t:"Consults you see on a typical clinic day?",h:"Roughly is fine.",
      o:[[6,"Under 8"],[8,"About 8"],[12,"About 12"],[16,"About 16"],[20,"About 20"],[24,"24+"]]}
   ];
-  var a=[null,null,null], i=0;
+  var a=[null,null,null], i=0, sent=false, src=null;
+  try{src=new URLSearchParams(location.search).get("src");if(src)src=src.slice(0,20)}catch(e){}
+  // Saves the answers once per page load, anonymously. Never retried; never shows an error.
+  function save(mins,own,cons){
+    if(sent)return; sent=true;
+    try{fetch("/api/check",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({minutes_per_consult:mins,own_time_hours:own,consults_per_day:cons,src:src}),
+      keepalive:true,credentials:"omit"}).catch(function(){})}catch(e){}
+  }
   var $=function(id){return document.getElementById(id)};
   function show(id){["s0","sq","sr"].forEach(function(s){$(s).hidden=s!==id});window.scrollTo(0,0)}
   function draw(){
@@ -155,6 +165,7 @@ h2{font-size:21px;color:var(--navy);margin-bottom:6px}
     $("own").textContent=(own===0?"None":fmt(own)+" h a week");
     $("yr").textContent=Math.round(wk*46).toLocaleString("en-AU")+" h";
     show("sr");
+    save(mins,own,cons);
   }
   $("go").onclick=function(){i=0;draw();show("sq")};
   $("opts").onclick=function(e){
@@ -165,7 +176,7 @@ h2{font-size:21px;color:var(--navy);margin-bottom:6px}
   $("back").onclick=function(){ if(i>0){i--;draw()} else show("s0") };
   $("redo").onclick=function(){a=[null,null,null];i=0;show("s0");$("copied").textContent=""};
   $("share").onclick=function(){
-    var url="https://heronscribe.app/check";
+    var url="https://heronscribe.app/check?src=share";
     var msg="How much paperwork follows you home? This 30-second check shows you: "+url;
     function copy(){
       try{navigator.clipboard.writeText(msg).then(function(){$("copied").textContent="Link copied. Paste it into a message."},function(){$("copied").textContent=msg})}
