@@ -6,5 +6,13 @@
     "directory": "./public",
     "binding": "ASSETS",
     "not_found_handling": "404-page"
-  }
+  },
+  // Free Workers rate limit for POST /api/check: one shared counter, not per visitor.
+  "ratelimits": [
+    {
+      "name": "CHECK_LIMITER",
+      "namespace_id": "1001",
+      "simple": { "limit": 20, "period": 10 }
+    }
+  ]
 }

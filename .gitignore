@@ -1,0 +1,8 @@
+# Local Worker secrets for `wrangler dev` (never commit)
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+# Wrangler local state and npm leftovers
+.wrangler/
+node_modules/
